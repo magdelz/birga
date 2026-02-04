@@ -56,9 +56,17 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, type, onSubmit }
         <h2 className="text-3xl font-bold text-primary mb-2 tracking-tight">
           {type === 'LOGIN' ? t('login') : t('register')}
         </h2>
-        <p className="text-xs font-mono text-secondary mb-6 uppercase tracking-widest border-b border-border pb-4">
+        <p className="text-xs font-mono text-secondary mb-4 uppercase tracking-widest border-b border-border pb-4">
            SECURE_ACCESS_GATEWAY // {type === 'LOGIN' ? 'AUTH' : 'NEW_ID'}
         </p>
+
+        <div className="bg-red-50 dark:bg-red-900/20 border border-red-300 dark:border-red-800 rounded p-3 mb-4">
+          <p className="text-red-600 dark:text-red-400 text-xs text-center leading-relaxed">
+            Этот сайт — демонстрационный шаблон для портфолио QYVARO.<br/>
+            Формы не предназначены для реального использования.<br/>
+            Пожалуйста, не вводите свои данные.
+          </p>
+        </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           

@@ -213,11 +213,16 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
       {/* Footer */}
       <footer className="relative z-10 border-t border-border py-8 bg-background transition-colors duration-300">
-        <div className="max-w-[1800px] mx-auto px-6 flex justify-between items-center text-[10px] font-mono text-secondary uppercase tracking-wider">
-          <p>{t('sys_ver')}</p>
-          <div className="flex gap-6">
-             <span>{t('latency')}</span>
-             <span>{t('server')}</span>
+        <div className="max-w-[1800px] mx-auto px-6 flex flex-col gap-4">
+          <div className="flex justify-between items-center text-[10px] font-mono text-secondary uppercase tracking-wider">
+            <p>{t('sys_ver')}</p>
+            <div className="flex gap-6">
+               <span>{t('latency')}</span>
+               <span>{t('server')}</span>
+            </div>
+          </div>
+          <div className="text-center text-xs text-secondary border-t border-border pt-4">
+            Сайт используется как демонстрационный шаблон для портфолио QYVARO.
           </div>
         </div>
       </footer>
