@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexusTrade Prime</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['Space Grotesk', 'monospace'],
+              tech: ['Rajdhani', 'sans-serif'],
+            },
+            colors: {
+              // Semantic Colors mapped to CSS Variables
+              background: 'var(--bg-primary)',
+              surface: 'var(--bg-surface)',
+              primary: 'var(--text-primary)',
+              secondary: 'var(--text-secondary)',
+              border: 'var(--border-color)',
+              hover: 'var(--bg-hover)',
+              
+              // Helper colors
+              success: '#10b981',    // Emerald 500
+              danger: '#ef4444',     // Red 500
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
+              'marquee': 'marquee 30s linear infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: 0, transform: 'translateY(10px)' },
+                '100%': { opacity: 1, transform: 'translateY(0)' },
+              },
+              marquee: {
+                '0%': { transform: 'translateX(0%)' },
+                '100%': { transform: 'translateX(-100%)' },
+              }
+            },
+            backgroundImage: {
+              'grid-pattern': "linear-gradient(to right, var(--grid-color) 1px, transparent 1px), linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px)",
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Rajdhani:wght@500;600;700&family=Space+Grotesk:wght@300;400;500;600&display=swap');
+      
+      /* THEME VARIABLES */
+      :root {
+        /* Light Mode (Swiss Style) */
+        --bg-primary: #ffffff;
+        --bg-surface: #f8fafc; /* Slate 50 */
+        --bg-hover: #f1f5f9;   /* Slate 100 */
+        --text-primary: #0f172a; /* Slate 900 (Blackish) */
+        --text-secondary: #64748b; /* Slate 500 */
+        --border-color: #e2e8f0; /* Slate 200 */
+        --grid-color: #f1f5f9;
+      }
+
+      .dark {
+        /* Dark Mode (Cyber/Pro) */
+        --bg-primary: #020617; /* Slate 950 */
+        --bg-surface: #0f172a; /* Slate 900 */
+        --bg-hover: #1e293b;   /* Slate 800 */
+        --text-primary: #f8fafc; /* Slate 50 */
+        --text-secondary: #94a3b8; /* Slate 400 */
+        --border-color: #1e293b; /* Slate 800 */
+        --grid-color: #0f172a;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        transition: background-color 0.3s ease, color 0.3s ease;
+        overflow-x: hidden;
+      }
+
+      /* Clean Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--bg-surface); 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--text-secondary); 
+        border-radius: 3px;
+        opacity: 0.5;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--text-primary); 
+      }
+      
+      /* Swiss Card Utility */
+      .swiss-card {
+        background: var(--bg-primary);
+        border: 1px solid var(--border-color);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        transition: all 0.2s ease;
+      }
+      .dark .swiss-card {
+        box-shadow: none;
+      }
+      
+      .swiss-card:hover {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        border-color: var(--text-secondary);
+      }
+
+      .swiss-input {
+        background: var(--bg-primary);
+        border: 1px solid var(--border-color);
+        color: var(--text-primary);
+        transition: all 0.2s;
+      }
+      .swiss-input:focus {
+        border-color: var(--text-primary);
+        outline: none;
+        box-shadow: 0 0 0 1px var(--text-primary);
+      }
+      
+      /* Placeholder override for dark mode consistency */
+      input::placeholder {
+        color: var(--text-secondary);
+      }
+
+      ::selection {
+        background: var(--text-primary);
+        color: var(--bg-primary);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "recharts": "https://esm.sh/recharts@^3.7.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
+    "lightweight-charts": "https://esm.sh/lightweight-charts@5.0.0",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.39.8"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
